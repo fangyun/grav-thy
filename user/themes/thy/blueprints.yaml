@@ -1,0 +1,10 @@
+name: 天汇园主题
+version: 1.0
+description: "天汇园网站主题"
+author:
+  name: Fang Yun
+  email: fangyuncn@163.com
+  url: https://github.com/fangyun
+homepage: https://github.com/fangyun/grav-theme-thy
+keywords: 天汇园, 主题, 现代, 快速, 响应式, HTML5, CSS3
+license: MIT

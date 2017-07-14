@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+    <meta charset="UTF-8">
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="天汇园建于2003年，位于昌平区天寿山麓，东靠十三陵水库，西邻十三陵神路，南邻昌平城区，北依长陵景区。处于北京西北地区旅游枢纽位置。
+其自然环境幽雅，北部的天寿山主峰三峰并峙，东、西、北三面形成环抱式天然屏障，环山之内，是洪水冲击形成的小盆地，天汇园处于小盆地最高点。伫立平原北望，群山巍峨，层峦叠嶂；登高南眺，川原开阔。此地土壤肥沃，雨量充沛，日照充足，昼夜温差大，四季分明，空气清新自然，是种植果树的天然基地。">
+    <meta name="keywords" content="天汇园|采摘|观光|果品|天寿山|昌平|十三陵|有机|生态农业" />    
+    <link rel="shortcut icon" type="image/png" href="{{ url('theme://img/favicon.png') }}"/>
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css/vendors.css', 190) %}
+        {% do assets.addCss('theme://css/style-blue.css', 180) %}
+        {% do assets.addCss('theme://css/width-full.css', 170) %}
+        {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+            {% do assets.addJs('theme://js/html5shiv.min.js') %}
+            {% do assets.addJs('theme://js/respond.min.js') %}
+        {% endif %}        
+	{% endblock %}
+	{{ assets.css() }}
+	
+    {% block javascripts %}
+        {% do assets.addJs('theme://js/vendors.js', 200) %}
+    {% endblock %}	
+    {{ assets.js() }}
+{% endblock head%}  
+</head>
+
+<body>
+
+<div class="sb-site-container">
+<div class="boxed">
+{% block header %}
+<header id="header-full-top" class="hidden-xs header-full">
+    <div class="container">
+        <div class="header-full-title">
+            <h1 class="animated fadeInRight"><a href="index.html"><span>天汇园</span></a></h1>
+            <p class="animated fadeInRight">北京天汇园生态农业发展有限公司</p>
+        </div>
+        
+		<nav class="top-nav">
+            <ul class="top-nav-social hidden-sm">
+                <li><a href="#" class="animated fadeIn animation-delay-6 rss"><i class="fa fa-rss"></i></a></li>
+                <li><a href="#" class="animated fadeIn animation-delay-7 twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" class="animated fadeIn animation-delay-8 facebook"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#" class="animated fadeIn animation-delay-9 google-plus"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#" class="animated fadeIn animation-delay-9 instagram"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#" class="animated fadeIn animation-delay-8 vine"><i class="fa fa-vine"></i></a></li>
+                <li><a href="#" class="animated fadeIn animation-delay-7 linkedin"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#" class="animated fadeIn animation-delay-6 flickr"><i class="fa fa-flickr"></i></a></li>
+            </ul>
+            
+            <div class="dropdown animated fadeInDown animation-delay-13">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-search-box animated fadeInUp">
+                    <form role="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-ar btn-primary" type="button">Go!</button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
+                </div>
+            </div> <!-- dropdown -->
+        </nav>        
+    </div> <!-- container -->
+</header> <!-- header-full -->
+{% endblock %}
+
+{% block nav %}
+{% include 'partials/navigation.html.twig' %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+<footer id="footer">
+    <p><a href="http://www.miitbeian.gov.cn">京ICP备12345678号</a> 
+    	&copy; 2017 <a href="http://www.thy-cp.com">北京天汇园生态农业发展有限公司</a> 版权所有. 
+    	<a href="https://github.com/fangyun">Yun's Studio</a>技术支持.</p>
+</footer>
+{% endblock %}
+</div> <!-- boxed -->
+</div> <!-- sb-site -->
+</body>
+</html>

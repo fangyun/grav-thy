@@ -1,0 +1,107 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block javascripts %}
+    {% do assets.addJs('theme://js/vendors.js', 200) %}
+    {% do assets.addJs('theme://js/carousels.js', 100) %}
+{% endblock %}	
+
+{% block content %}
+<header id="header-full">
+    <div class="wrap-primary">
+        <div class="container">
+        </div>
+    </div>
+</header>
+
+<section class="index-section">
+    <div class="container">
+        <div class="row">   
+            <div class="col-md-5 hidden-sm hidden-xs">
+                <img src="{{ url('theme://img/fruit-1.jpg') }}" class="animated bounceIn animation-delay-5"/>
+                <img src="{{ url('theme://img/classfication.jpg') }}" class="animated bounceIn animation-delay-10"/>
+            </div>             
+            <div class="col-md-7">
+    			<section class="">
+                    <ul class="bxslider" id="bx5">
+                      <li>
+                        <a href="#" class="thumbnail">
+                          <img src="{{ url('theme://img/fruit/1.jpg') }}" alt="..." title="八棱海棠">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/2.jpg') }}" alt="..." title="樱桃">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/3.jpg') }}" alt="..." title="峰后">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/4.jpg') }}" alt="..." title="美人指">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="thumbnail">
+                          <img src="{{ url('theme://img/fruit/5.jpg') }}" alt="..." title="天缘奇">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/6.jpg') }}" alt="..." title="大果水晶">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/7.jpg') }}" alt="..." title="丰水">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/8.jpg') }}" alt="..." title="黄金">
+                        </a>
+                      </li>  
+                      <li>
+                        <a href="#" class="thumbnail">
+                          <img src="{{ url('theme://img/fruit/9.jpg') }}" alt="..." title="绿宝石">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/10.jpg') }}" alt="..." title="早红考蜜斯">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/11.jpg') }}" alt="..." title="园黄">
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/12.jpg') }}" alt="..." title="新高">
+                        </a>
+                      </li> 
+                      <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/13.jpg') }}" alt="..." title="爱甘水">
+                        </a>
+                      </li> 
+                      <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/14.jpg') }}" alt="..." title="SH6矮化中间砧型苹果">
+                        </a>
+                      </li>   
+                       <li>
+                        <a href="#" class="thumbnail">
+                           <img src="{{ url('theme://img/fruit/15.jpg') }}" alt="..." title="王林苹果">
+                        </a>
+                      </li>                    
+                	</ul>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
