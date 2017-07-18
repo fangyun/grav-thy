@@ -1,0 +1,60 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set crumbs = breadcrumbs.get() %}
+
+{% block content %}
+<div class="container">
+	<header class="main-header-thy"></header>
+    <div class="col-md-12">
+        <div class="row" >
+        	<div class="text-right col-md-12">
+                {% set crumbs = breadcrumbs.get() %}
+                {% set breadcrumbs_config = config.plugins.breadcrumbs %}
+                {% set divider = breadcrumbs_config.icon_divider_classes %}
+                
+                {% if crumbs|length > 1 or breadcrumbs_config.show_all %}
+                <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                    {% if breadcrumbs_config.icon_home %}
+                    <i class="{{ breadcrumbs_config.icon_home }}"></i>
+                    {% endif %}
+                    {% for crumb in crumbs %}
+                        {% if not loop.last %}
+                            {% if crumb.routable %}
+                                <a href="{{ crumb.url }}" itemprop="url"><span itemprop="title">{{ crumb.menu }}</span></a>
+                            {% else  %}
+                                <span itemprop="title">{{ crumb.menu }}</span>
+                            {% endif %}
+                            <i class="{{ divider }}"></i>
+                        {% else %}
+                            {% if breadcrumbs_config.link_trailing %}
+                                <a href="{{ crumb.url }}" itemprop="url"><span itemprop="title">{{ crumb.menu }}</span></a>
+                            {% else %}
+                                <span itemprop="title">{{ crumb.menu }}</span>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+           </div> 
+            <div class="thy-thumbnail">
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-1">
+                        {% for i in 0..(page.header.gallery|length)/5-1 %}
+                        	<div class="row">
+                        	{% for j in 0..4 %}
+                        	    {% set item=page.header.gallery[5*i+j] %}
+                                  <div class="col-sm-3 col-md-2 thumbnail">
+                                      <a href="{{page.slug}}/{{ item.href }}"><img src="{{url(item.src)}}" alt="{{ item.title }}"></a>
+                                      <p class="caption"><a href="{{page.slug}}/{{ item.href }}">{{ item.title }}</a></p>
+                                  </div>
+                            {% endfor %}                     
+                            </div>    
+                        {% endfor %}                				
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

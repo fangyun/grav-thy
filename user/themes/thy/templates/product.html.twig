@@ -1,0 +1,66 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block javascripts %}
+    {% do assets.addJs('theme://js/vendors.js', 200) %}
+    {% do assets.addJs('theme://js/product.js', 100) %}
+{% endblock %}
+
+{% set crumbs = breadcrumbs.get() %}
+
+{% block content %}
+<div class="container">
+	<header class="main-header-thy"></header>
+    <div class="col-md-12">
+        <div class="row" >
+        	<div class="text-right col-md-12">
+                {% set crumbs = breadcrumbs.get() %}
+                {% set breadcrumbs_config = config.plugins.breadcrumbs %}
+                {% set divider = breadcrumbs_config.icon_divider_classes %}
+                
+                {% if crumbs|length > 1 or breadcrumbs_config.show_all %}
+                <div id="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                    {% if breadcrumbs_config.icon_home %}
+                    <i class="{{ breadcrumbs_config.icon_home }}"></i>
+                    {% endif %}
+                    {% for crumb in crumbs %}
+                        {% if not loop.last %}
+                            {% if crumb.routable %}
+                                <a href="{{ crumb.url }}" itemprop="url"><span itemprop="title">{{ crumb.menu }}</span></a>
+                            {% else  %}
+                                <span itemprop="title">{{ crumb.menu }}</span>
+                            {% endif %}
+                            <i class="{{ divider }}"></i>
+                        {% else %}
+                            {% if breadcrumbs_config.link_trailing %}
+                                <a href="{{ crumb.url }}" itemprop="url"><span itemprop="title">{{ crumb.menu }}</span></a>
+                            {% else %}
+                                <span itemprop="title">{{ crumb.menu }}</span>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+           </div> 
+
+        <div class="row">
+                <div class="col-md-4">
+                    <ul class="bxslider">
+                    {% for item in page.media.images %}
+                      <li><img src="{{ item.url }}" /></li>
+                    {% endfor %} 
+                    </ul>
+                    <div id="bx-pager">
+                    {% for item in page.media.images %}
+                      <a data-slide-index="{{loop.index0}}" href="#"><img src="{{ item.resize(50,50).url }}" /></a>
+                    {% endfor %}  
+                    </div>
+                </div>
+                <div class="col-md-8 thy-product">
+                    {{ page.content }}
+                </div>
+            </div>
+            
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-md-12">
+		<h4>{{ page.header.description }}</h4>
+	</div>
+</div>	
+{% for i in 0..(page.header.gallery|length)/2+1 %}
+	{% set item0=page.header.gallery[2*i] %}
+	{% set item1=page.header.gallery[2*i+1] %}
+    {% set image0 = page.media[page.header.gallery[2*i].src] %}
+    {% set image1 = page.media[page.header.gallery[2*i+1].src] %}
+    <div class="row">
+        <div class="col-md-5">
+        	<img src="{{ image0.url }}" alt="{{ item0.title }}" title="{{ item0.title }}" class='img-responsive' style="width:{{ item0.width }}"/>
+        </div> 
+        <div class="col-md-5">
+        	<img src="{{ image1.url }}" alt="{{ item1.title }}" title="{{ item1.title }}" class='img-responsive' style="width:{{ item1.width }}"/>
+        </div>                
+    </div>    
+{% endfor %}
+{% if not page.header.last  %}
+<hr>
+{% endif %}

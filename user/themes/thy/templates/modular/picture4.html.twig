@@ -1,0 +1,19 @@
+{% for i in 0..(page.header.gallery|length)/3+1 %}
+	{% set item0=page.header.gallery[3*i] %}
+	{% set item1=page.header.gallery[3*i+1] %}
+	{% set item2=page.header.gallery[3*i+2] %}
+    {% set image0 = page.media[page.header.gallery[3*i].src] %}
+    {% set image1 = page.media[page.header.gallery[3*i+1].src] %}
+    {% set image2 = page.media[page.header.gallery[3*i+2].src] %}
+    <div class="row">
+        <div class="col-md-4">
+        	<img src="{{ image0.url }}" alt="{{ item0.title }}" title="{{ item0.title }}" class='img-responsive' style="width:{{ item0.width }}"/>
+        </div> 
+        <div class="col-md-4">
+        	<img src="{{ image1.url }}" alt="{{ item1.title }}" title="{{ item1.title }}" class='img-responsive' style="width:{{ item1.width }}"/>
+        </div> 
+        <div class="col-md-4">
+        	<img src="{{ image2.url }}" alt="{{ item2.title }}" title="{{ item2.title }}" class='img-responsive' style="width:{{ item2.width }}"/>
+        </div>                        
+    </div>    
+{% endfor %}

@@ -1,0 +1,12 @@
+{% for item in page.header.gallery %}
+    {% set video = page.media[item.src] %}
+    <div class="row">
+        <div class="col-md-12">
+            <video class="video-js vjs-default-skin vjs-big-play-centered center-block {{ item.videoClass }}"
+                 controls autoplay preload="auto" width="{{ item.width }}"
+                 data-setup='{"example_options": true}'>
+           		<source src="{{ video.url }}">
+            </video>
+        </div>        
+    </div>    
+{% endfor %}

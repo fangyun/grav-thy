@@ -1,0 +1,11 @@
+{% for item in page.header.gallery %}
+    {% set image = page.media[item.src] %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="content-box box-default">
+                <img src="{{ image.url }}" alt="{{ item.title }}" title="{{ item.title }}" class='img-responsive' style="width:{{ item.width }}"/>
+                <p><strong>{{ item.title }}</strong></p>
+            </div>
+        </div>        
+    </div>    
+{% endfor %}

@@ -1,0 +1,18 @@
+{% extends 'text_picture.html.twig' %}
+
+{% block stylesheets %}
+    {% do assets.addCss('theme://css/vendors.css', 190) %}
+    {% do assets.addCss('theme://css/style-blue.css', 180) %}
+    {% do assets.addCss('theme://css/width-full.css', 170) %}
+    {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+        {% do assets.addJs('theme://js/html5shiv.min.js',160) %}
+        {% do assets.addJs('theme://js/respond.min.js',150) %}
+    {% endif %} 
+    {% do assets.addCss('theme://css/video-js.css', 140) %}
+{% endblock %}
+
+{% block javascripts %}
+    {% do assets.addJs('theme://js/vendors.js', 200) %}
+    {% do assets.addJs('theme://js/video.js', 190) %}
+    {% do assets.addJs('theme://js/videojs-flash.min.js', 180) %}
+{% endblock %}
