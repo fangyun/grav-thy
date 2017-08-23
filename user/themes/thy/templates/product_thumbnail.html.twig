@@ -40,7 +40,7 @@
             <div class="thy-thumbnail">
                 <div class="row">
                     <div class="col-md-12 col-md-offset-1">
-                        {% for i in 0..(page.header.gallery|length)/5-1 %}
+                        {% for i in 0..(page.header.gallery|length)//5 %}
                         	<div class="row">
                         	{% for j in 0..4 %}
                         	    {% set item=page.header.gallery[5*i+j] %}
