@@ -3,12 +3,12 @@
 <head>
 {% block head %}
     <meta charset="UTF-8">
-    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    <title>{{ site.title|e('html') }}-{% if header.title %}{{ header.title|e('html') }}{% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="description" content="天汇园建于2003年，位于昌平区天寿山麓，东靠十三陵水库，西邻十三陵神路，南邻昌平城区，北依长陵景区。处于北京西北地区旅游枢纽位置。
+	<meta name="description" content="北京天汇园生态农业发展有限公司，建于2003年，位于昌平区天寿山麓，东靠十三陵水库，西邻十三陵神路，南邻昌平城区，北依长陵景区。处于北京西北地区旅游枢纽位置。
 其自然环境幽雅，北部的天寿山主峰三峰并峙，东、西、北三面形成环抱式天然屏障，环山之内，是洪水冲击形成的小盆地，天汇园处于小盆地最高点。伫立平原北望，群山巍峨，层峦叠嶂；登高南眺，川原开阔。此地土壤肥沃，雨量充沛，日照充足，昼夜温差大，四季分明，空气清新自然，是种植果树的天然基地。">
-    <meta name="keywords" content="天汇园|采摘|观光|果品|天寿山|昌平|十三陵|有机|生态农业" />    
+    <meta name="keywords" content="北京天汇园,采摘,观光,果品,天寿山,昌平,十三陵,有机,生态农业" />    
     <link rel="shortcut icon" type="image/png" href="{{ url('theme://img/favicon.png') }}"/>
 
     {% block stylesheets %}
@@ -41,28 +41,7 @@
             <p class="animated fadeInRight">北京天汇园生态农业发展有限公司</p>
         </div>
         
-		<nav class="top-nav">
-    		<div class="hidden-sm jiathis_style_32x32" style="border: solid 1px #e3e6e8;display:inline-block;padding: 3px 10px;">
-                <!-- JiaThis Button BEGIN -->
-                <a class="jiathis_button_weixin"></a>
-                <a class="jiathis_button_tsina"></a>
-                <a class="jiathis_button_cqq"></a>
-                <a class="jiathis_button_qzone"></a>
-                <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-                <script type="text/javascript" >
-                var jiathis_config={
-                	siteNum:8,
-                	sm:"weixin,tsina,qzone,cqq,fb,googleplus,twitter,ishare",
-                	summary:"",
-                	boldNum:4,
-                	shortUrl:false,
-                	hideMore:false
-                }
-                </script>
-                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-                <!-- JiaThis Button END -->
-            </div>    
-            
+		<nav class="top-nav">        
             <div class="dropdown animated fadeInDown animation-delay-13">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-search-box animated fadeInUp">
@@ -91,7 +70,7 @@
 {% block footer %}
 <footer id="footer">
     <p><a href="http://www.miitbeian.gov.cn">京ICP备17074145号</a> 
-    	&copy; 2017-2018 <a href="http://www.thy-cp.com">北京天汇园生态农业发展有限公司</a> 版权所有. 
+    	&copy; 2017-2019 <a href="http://www.thy-bj.com">北京天汇园生态农业发展有限公司</a> 版权所有. 
     	<a href="https://github.com/fangyun">Yun's Studio</a>技术支持.</p>
 </footer>
 {% endblock %}

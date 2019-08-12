@@ -1,6 +1,5 @@
 ---
-title: 走进天汇园
-routable: false
+title: 果园简介
 modular_content:
     items: '@self.modular'
     order:

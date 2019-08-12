@@ -1,7 +1,8 @@
 ###天汇园有机果品观光采摘园
+![](chart.jpeg)
 
 **地  址：** 北京昌平十三陵镇康长路      
 **电  话：** +86-010-89709982, 13683521870  
 **邮  编：** 102200                             
-**Email：** thyadmin@thy-cp.com   
-**网  址：** www.thy-cp.com
+**Email：** fangyuncn@163.com   
+**网  址：** www.thy-bj.com    

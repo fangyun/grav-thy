@@ -5027,7 +5027,7 @@ input.input-lg[type="text"] {
 #header-full {
   background-image: url("../img/door.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   color: #fff;
 }
 .wrap-primary {

@@ -2,7 +2,7 @@
     {% for p in page.children.visible %}
         {% if p.children.visible.count > 0 %}
             <li class="dropdown">
-                <a href="{{ p.url }}" class="dropdown-toggle" data-hover="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-hover="dropdown">
                     {{ p.menu }}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-left animated-2x animated fadeIn">
